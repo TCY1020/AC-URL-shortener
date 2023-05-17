@@ -1,7 +1,7 @@
 # URL shortener 
 **這是使用 Node.js + Express + MongoDB + Mongoose。**
 ## 專案畫面
-![MyImage]([https://github.com/TCY1020/AC-progect-Restaurant-list/blob/main/public/img/%E9%A4%90%E5%BB%B3%E9%A6%96%E9%A0%81%E6%8E%92%E5%BA%8F%E5%8A%9F%E8%83%BD.png?raw=true](https://github.com/TCY1020/URL-shortener/blob/main/public/img/%E5%B0%81%E9%9D%A2.png?raw=true))
+![MyImage](https://github.com/TCY1020/URL-shortener/blob/main/public/img/%E5%B0%81%E9%9D%A2.png?raw=true)
 ## Features - 產品功能
 + 可以將原本較長的網址縮短
 + 可以驗證原網址是否無效
