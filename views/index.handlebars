@@ -1,10 +1,11 @@
-<!--TODO:寫#if條件式不同情形顯示不同頁面-->
+
 <div class="container mt-3 body">
   <div class="card " style="width: 30rem;">
     <h1>URL Shortener</h1>
     <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
       class="card-img-top" alt="...">
     <div class="card-body">
+      <h4 class="text-danger bg-dark text-aline:center">{{error}}</h4>
       {{#if inputUrl}}
       <a href="{{inputUrl.originalUrl}}" id="shortUrl">{{inputUrl.shortUrl}}</a>
       <div><!-- 複製按鍵onclick="copyEvent('shortUrl')-->
