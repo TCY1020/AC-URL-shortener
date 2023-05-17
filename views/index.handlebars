@@ -1,14 +1,22 @@
-
+<!--TODO:寫#if條件式不同情形顯示不同頁面-->
 <div class="container mt-3 body">
   <div class="card " style="width: 30rem;">
     <h1>URL Shortener</h1>
     <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
       class="card-img-top" alt="...">
     <div class="card-body">
-      <form action="/create" method="POST">
-        <input type="text" class="form-control" id="url" placeholder="Input URL here" name="url"required>
+      {{#if inputUrl.shortUrl}}
+      <a href="{{inputUrl.originalUrl}}" id="shortUrl">{{inputUrl.shortUrl}}</a>
+      <div><!-- 複製按鍵onclick="copyEvent('shortUrl')-->
+        <button class="btn btn-outline-primary" onclick="copyEvent('shortUrl')">copy</button>
+        <a href="/" class="btn btn-outline-primary">back</a>
+      </div>
+      {{else}}
+      <form action="/" method="POST">
+        <input type="text" class="form-control" id="url" placeholder="Input URL here" name="url" required>
         <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-outline-primary">Submit</button>
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
+          {{/if}}
         </div>
       </form>
     </div>

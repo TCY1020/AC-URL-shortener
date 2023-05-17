@@ -9,11 +9,15 @@ const port = 3000
 
 require('./config/mongoose.js')
 
+
+
+
 app.engine('handlebars', exphbs.engine({defaultLAyout: 'main'}))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(routers)
+
 
 app.listen(port, ()=>{
   console.log(`URL-shortener is running on http://localhost:${port}`)
