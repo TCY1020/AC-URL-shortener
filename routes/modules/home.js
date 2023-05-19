@@ -22,9 +22,7 @@ router.post('/create', (req, res) => {
     .lean()
     .then(inputUrl =>{
       if (inputUrl){
-        res.render('index', { inputUrl })
-      
-        console.log(inputUrl)
+        res.render('index', { inputUrl })        
       }else{
         URL.create({
           originalUrl: originalUrl,
