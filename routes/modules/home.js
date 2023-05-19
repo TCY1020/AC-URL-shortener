@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const URL = require('../../models/url')
+const URL = require('../../models/url.js')
 const getShortUrl = require('../../tools/shortenURL')
 const checkURL = require('../../tools/checkURL')
 
@@ -9,15 +9,6 @@ const checkURL = require('../../tools/checkURL')
 
 router.get('/', (req, res) =>{
   res.render('index')
-})
-// 在搜尋列上輸入短網址直接跳轉
-router.get('/:path', (req, res) =>{
-  const path = req.params.path
-  const shortUrl = `http://localhost:3000/${path}`
-  URL.findOne({shortUrl})
-    .lean()
-    .then(Url => res.redirect(Url.originalUrl))
-    .catch((error) => console.log(error))
 })
 
 // 短網址存取與取出
@@ -37,7 +28,7 @@ router.post('/create', (req, res) => {
       }else{
         URL.create({
           originalUrl: originalUrl,
-          shortUrl: getShortUrl()
+          shortUrl: `http://localhost:3000/${getShortUrl()}`
         })
           .then(inputUrl =>{
             //用解構賦值將特殊物件轉成一般物件
